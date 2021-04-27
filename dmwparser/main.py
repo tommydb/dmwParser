@@ -2,11 +2,11 @@ from lxml import etree
 from sqlitedict import SqliteDict
 import os
 
-os.unlink('./dmw.sqlite')
+os.unlink('../data/dmw.sqlite')
 
-dmw_dict = SqliteDict('./dmw.sqlite', autocommit=True)  # initialize dictionary
+dmw_dict = SqliteDict('../data/dmw.sqlite', autocommit=True)  # initialize dictionary
 
-context = etree.iterparse('temp.xml')
+context = etree.iterparse('../data/temp.xml')
 
 
 # get rid of the namespace in the tag
@@ -17,7 +17,7 @@ def Supress_Namespace(tag):
 
 
 def write_to_db(key, value):
-    with SqliteDict('./data/dmw.sqlite'):
+    with SqliteDict('../data/dmw.sqlite'):
         dmw_dict[key] = value
 
 
