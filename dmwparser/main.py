@@ -17,7 +17,7 @@ def Supress_Namespace(tag):
 
 
 def write_to_db(key, value):
-    with SqliteDict('./dmw.sqlite'):
+    with SqliteDict('./data/dmw.sqlite'):
         dmw_dict[key] = value
 
 
